@@ -1,0 +1,12 @@
+@mixin flex($c: row) {
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	flex-direction: $c;
+}
+
+.ellipsis { // 文字溢出打点换行
+	overflow: hidden;
+	white-space: nowrap;
+	text-overflow: ellipsis;
+}
