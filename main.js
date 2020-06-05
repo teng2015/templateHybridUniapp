@@ -11,7 +11,9 @@ Vue.prototype.$storage = $storage
 
 Vue.prototype.$offset = function (selector) { // 获取元素宽高位置信息
 	return new Promise((resolve, reject) => {
-		uni.createSelectorQuery().in(this).select(selector).boundingClientRect(data => data ? resolve(data) : reject('元素不存在')).exec()
+		uni.createSelectorQuery().in(this).select(selector).boundingClientRect(data => {
+			data ? resolve(data) : reject('元素不存在')
+		}).exec()
 	})
 }
 
